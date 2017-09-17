@@ -5,7 +5,7 @@ return [
     /*
      * Laravel-admin name.
      */
-    'name'      => '后台管理系统',
+    'name'      => '西安全能手家政服务中心',
 
     /*
      * Logo in admin panel header.
@@ -30,7 +30,7 @@ return [
     /*
      * Laravel-admin html title.
      */
-    'title'  => '后台管理系统',
+    'title'  => '西安全能手家政服务中心',
 
     /*
      * Laravel-admin auth setting.
