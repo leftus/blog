@@ -53,7 +53,7 @@ return [
             'file'   => 'file',
         ],
 
-        'host' => 'http://music.xunibaike.com',
+        'host' => '',
     ],
 
     /*
