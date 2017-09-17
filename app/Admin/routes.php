@@ -13,4 +13,6 @@ Route::group([
     $router->get('/', 'HomeController@index');
     $router->resource('contacts', ContactController::class);
     $router->resource('articles', ArticleController::class);
+    $router->resource('skills', SkillController::class);
+    $router->resource('employees', EmployeeController::class);
 });
