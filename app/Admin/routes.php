@@ -15,4 +15,5 @@ Route::group([
     $router->resource('articles', ArticleController::class);
     $router->resource('skills', SkillController::class);
     $router->resource('employees', EmployeeController::class);
+    $router->resource('employers', EmployerController::class);
 });

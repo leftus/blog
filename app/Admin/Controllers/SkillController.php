@@ -89,7 +89,7 @@ class SkillController extends Controller
     {
         return Admin::form(Skill::class, function (Form $form) {
 
-            $form->text('name', '名称')->rules('required|unique:skills');
+            $form->text('name', '名称')->rules('required');
             $form->text('alias', '别名');
             $form->number('sort', '排序');
         });
