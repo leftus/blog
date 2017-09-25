@@ -102,7 +102,6 @@ class EmployerController extends Controller
             $form->radio('skill', '技能')->options(\App\Skill::all()->pluck('name', 'id'));
             $form->radio('work_time', '工作时间')->options(config('admin.work_time'))->default('');
             $form->radio('live', '居家情况')->options(config('admin.live'))->default('');
-            $form->radio('free_time', '休息日')->options(config('admin.free_time'))->default('');
             $form->radio('baby', '育婴')->options(['0' => '主', '1'=> '辅'])->default('');
             $form->radio('baby_content', '育婴内容')->options(config('admin.baby_content'))->default('');
             $form->radio('baby_age', '孩子年龄')->options(config('admin.baby_age'))->default('');
