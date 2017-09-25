@@ -3,7 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-use EmployerRequire;
+use App\EmployerRequire;
 
 class Employer extends Model
 {
