@@ -94,7 +94,7 @@ class EmployeeController extends Controller
     protected function form()
     {
         return Admin::form(Employee::class, function (Form $form) {
-          $form->tab('基本信息', function ($form) {
+          // $form->tab('基本信息', function ($form) {
             $form->text('name', '姓名')->rules('required');
             $form->radio('sex','性别')->options(['0' => '女', '1'=> '男']);
             $form->mobile('mobile','电话')->rules('required');
@@ -115,7 +115,7 @@ class EmployeeController extends Controller
             $form->checkbox('job_intent', '工作意向')->options(\App\Skill::all()->pluck('alias', 'id'));
             $form->text('other_job_intent', '其他意向');
             $form->checkbox('make_food', '做饭')->options(config('admin.make_food'));
-          })->tab('工作要求', function ($form) {
+          // })->tab('工作要求', function ($form) {
             $form->radio('job_require.work_time','工作时间')->options(config('admin.work_time'));
             $form->radio('job_require.free_time','休息时间')->options(config('admin.free_time'));
             $form->radio('job_require.live','居家情况')->options(config('admin.live'));
@@ -128,7 +128,7 @@ class EmployeeController extends Controller
             $form->radio('job_require.patient_protect','病人护理')->options(config('admin.patient_protect'));
             $form->radio('job_require.patient_can','病人情况')->options(config('admin.patient_can'));
             $form->textarea('special','其他特殊情况');
-          });
+          // });
         });
     }
 }

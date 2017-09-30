@@ -88,7 +88,7 @@ class EmployerController extends Controller
     protected function form()
     {
         return Admin::form(Employer::class, function (Form $form) {
-          $form->tab('客户情况', function ($form) {
+          // $form->tab('客户情况', function ($form) {
             $form->radio('custom_from', '客户来源')->options(config('admin.custom_from'))->default('');
             $form->text('name','姓名')->rules('required');
             $form->mobile('mobile','电话');
@@ -111,7 +111,7 @@ class EmployerController extends Controller
             $form->radio('housework', '一般家务')->options(config('admin.housework'))->default('');
             $form->radio('cooking_time', '做饭时间')->options(config('admin.cooking_time'))->default('');
             $form->textarea('other_work','其他特殊要求');
-          })->tab('客户要求', function ($form) {
+          // })->tab('客户要求', function ($form) {
             $form->radio('employer_require.sex','性别')->options(['0' => '女', '1'=> '男']);
             $form->number('employer_require.age', '年龄')->help('岁以下');
             $form->radio('employer_require.come_type','性别')->options(['0' => '急', '1'=> '不急']);
@@ -120,7 +120,7 @@ class EmployerController extends Controller
             $form->text('employer_require.special', '特点');
             $form->text('employer_require.good_at', '擅长');
             $form->textarea('employer_require.other', '其他特殊要求');
-          });
+          // });
         });
     }
 }
