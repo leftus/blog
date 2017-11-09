@@ -17,4 +17,5 @@ class Employee extends Model
   public function job_require(){
     return $this->hasOne(EmployeeJobRequire::class, 'employee_id');
   }
+  
 }

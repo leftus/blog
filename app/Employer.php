@@ -12,4 +12,5 @@ class Employer extends Model
   public function employer_require(){
     return $this->hasOne(EmployerRequire::class, 'employer_id');
   }
+  
 }
