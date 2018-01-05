@@ -17,4 +17,6 @@ Route::group([
     $router->resource('employees', EmployeeController::class);
     $router->resource('employers', EmployerController::class);
     $router->resource('packs', PackController::class);
+    $router->resource('products', ProductController::class);
+    $router->resource('users', UserController::class);
 });
