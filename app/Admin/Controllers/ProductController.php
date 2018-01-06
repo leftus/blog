@@ -95,7 +95,7 @@ class ProductController extends Controller
         return Admin::form(Product::class, function (Form $form) {
               $form->text('name', '名称');
               $form->select('category_id', '分类')->options(\App\Category::all()->pluck('name', 'id'))->default('');
-              $form->image('images', '图片')->crop(182,182);
+              $form->image('images', '图片')->crop(300,300);
               $form->number('quantity', '数量');
               $form->currency('price', '单价')->symbol('￥');
               $form->editor('des', '商品介绍');
