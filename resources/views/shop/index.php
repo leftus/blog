@@ -29,6 +29,9 @@
 
 
   <div class="m-grids-3">
+    <a href="<?php echo url('/');?>" class="grids-item <?php echo ($current_category==0)?'active':'';?>">
+        <div class="grids-txt"><span>全部</span></div>
+    </a>
     <?php foreach($categorys as $category):?>
         <a href="<?php echo url('/',['category_id'=>$category->id]);?>" class="grids-item <?php echo ($category->id==$current_category)?'active':'';?>">
             <div class="grids-txt"><span><?php echo $category->name;?></span></div>
