@@ -49,7 +49,7 @@
               <h3 class="list-title"><?php echo $product->name;?></h3>
               <div class="list-mes-item">
                   <div>
-                      <span class="list-price"><em>¥</em><?php echo $product->price;?></span>
+                      <span class="list-price"><?php echo $product->price;?></span><span>元</span>
                       <span class="list-del-price"><?php echo $product->quantity;?></span>
                   </div>
                   <div></div>
