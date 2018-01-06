@@ -19,7 +19,7 @@
         <?php foreach($pictures as $picture):?>
           <div class="slider-item">
               <a href="#">
-                  <img src="<?php echo asset($picture->path);?>">
+                  <img class="lazy" data-url="<?php echo asset($picture->path);?>">
               </a>
           </div>
         <?php endforeach;?>
@@ -27,43 +27,37 @@
       <div class="slider-pagination"></div><!-- 分页标识 -->
   </div>
 
-  <div id="J_Tab" class="m-tab">
-      <div class="m-grids-3">
-        <?php foreach($categorys as $category):?>
-            <a href="<?php echo url('/',['category_id'=>$category->id]);?>" class="grids-item <?php echo ($category->id==$current_category)?'active':'';?>">
-                <div class="grids-txt"><span><?php echo $category->name;?></span></div>
-            </a>
-        <?php endforeach;?>
-      </div>
-      <div class="tab-panel">
-          <div class="tab-panel-item tab-active">
-            <article class="m-list list-theme1">
-              <?php foreach($products as $product):?>
-                <a href="#" class="list-item">
-                    <div class="list-img">
-                        <img src="<?php echo asset($product->images);?>">
-                    </div>
-                    <div class="list-mes">
-                        <h3 class="list-title"><?php echo $product->name;?></h3>
-                        <div class="list-mes-item">
-                            <div>
-                                <span class="list-price"><em>¥</em><?php echo $product->price;?></span>
-                                <span class="list-del-price"><?php echo $product->quantity;?></span>
-                            </div>
-                            <div></div>
-                        </div>
-                    </div>
-                </a>
-              <?php endforeach;?>
-            </article>
-          </div>
-          <div class="tab-panel-item">222222</div>
-          <div class="tab-panel-item">333333</div>
-      </div>
+
+  <div class="m-grids-3">
+    <?php foreach($categorys as $category):?>
+        <a href="<?php echo url('/',['category_id'=>$category->id]);?>" class="grids-item <?php echo ($category->id==$current_category)?'active':'';?>">
+            <div class="grids-txt"><span><?php echo $category->name;?></span></div>
+        </a>
+    <?php endforeach;?>
   </div>
 
+  <article class="m-list list-theme1">
+    <?php foreach($products as $product):?>
+      <a href="#" class="list-item">
+          <div class="list-img">
+              <img class="lazy" data-url="<?php echo asset($product->images);?>">
+          </div>
+          <div class="list-mes">
+              <h3 class="list-title"><?php echo $product->name;?></h3>
+              <div class="list-mes-item">
+                  <div>
+                      <span class="list-price"><em>¥</em><?php echo $product->price;?></span>
+                      <span class="list-del-price"><?php echo $product->quantity;?></span>
+                  </div>
+                  <div></div>
+              </div>
+          </div>
+      </a>
+    <?php endforeach;?>
+  </article>
+
   <footer class="m-tabbar">
-      <a href="#" class="tabbar-item tabbar-active">
+      <a href="<?php echo url('/');?>" class="tabbar-item tabbar-active">
           <span class="tabbar-icon">
               <i class="icon-home"></i>
           </span>
@@ -116,6 +110,7 @@
     $tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
         console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
     });
+    $('img.lazy').lazyLoad();
 </script>
 </body>
 </html>
