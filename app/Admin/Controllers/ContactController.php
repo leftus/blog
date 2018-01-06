@@ -72,13 +72,13 @@ class ContactController extends Controller
     protected function grid()
     {
         return Admin::grid(Contact::class, function (Grid $grid) {
-            $grid->disableCreation();
+            //$grid->disableCreation();
             $grid->disableFilter();
             $grid->disableExport();
             //$grid->disableActions();
             $grid->actions(function ($actions) {
                //$actions->disableDelete();
-               $actions->disableEdit();
+               //$actions->disableEdit();
            });
             //$grid->disablePagination();
             $grid->name('姓名');
@@ -97,7 +97,10 @@ class ContactController extends Controller
     protected function form()
     {
         return Admin::form(Contact::class, function (Form $form) {
-
+          $form->text('name','姓名');
+          $form->mobile('mobile','电话');
+          $form->email('email','邮箱');
+          $form->editor('content','介绍');
         });
     }
 }

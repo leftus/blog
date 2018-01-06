@@ -2,3 +2,9 @@
   position: fixed;
   bottom: 0;
 }
+.m-tab{
+  margin-bottom: 1rem;
+}
+.active .grids-txt{
+  color:#FF5E53;
+}
