@@ -2,7 +2,7 @@
 
 namespace App\Admin\Controllers;
 
-use App\Product;
+use App\Category;
 
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -11,7 +11,7 @@ use Encore\Admin\Layout\Content;
 use App\Http\Controllers\Controller;
 use Encore\Admin\Controllers\ModelForm;
 
-class ProductController extends Controller
+class CategoryController extends Controller
 {
     use ModelForm;
 
@@ -24,8 +24,8 @@ class ProductController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('商品');
-            $content->description('商品管理');
+            $content->header('分类');
+            $content->description('分类管理');
 
             $content->body($this->grid());
         });
@@ -41,8 +41,8 @@ class ProductController extends Controller
     {
         return Admin::content(function (Content $content) use ($id) {
 
-            $content->header('商品');
-            $content->description('商品管理');
+            $content->header('分类');
+            $content->description('分类管理');
 
             $content->body($this->form()->edit($id));
         });
@@ -57,8 +57,8 @@ class ProductController extends Controller
     {
         return Admin::content(function (Content $content) {
 
-            $content->header('商品');
-            $content->description('商品管理');
+            $content->header('分类');
+            $content->description('分类管理');
 
             $content->body($this->form());
         });
@@ -71,17 +71,11 @@ class ProductController extends Controller
      */
     protected function grid()
     {
-        return Admin::grid(Product::class, function (Grid $grid) {
-
+        return Admin::grid(Category::class, function (Grid $grid) {
             $grid->disableFilter();
             $grid->disableExport();
-            $grid->name('名称');
-            $grid->category()->name('分类');
-            $grid->images('图片')->image();
-            $grid->quantity('数量');
-            $grid->price('单价');
-            $grid->updated_at('时间');
-
+            $grid->name('分类名称');
+            $grid->sort('排序');
         });
     }
 
@@ -92,13 +86,9 @@ class ProductController extends Controller
      */
     protected function form()
     {
-        return Admin::form(Product::class, function (Form $form) {
-              $form->text('name', '名称');
-              $form->select('category_id', '分类')->options(\App\Category::all()->pluck('name', 'id'))->default('');
-              $form->image('images', '图片')->crop(182,182);
-              $form->number('quantity', '数量');
-              $form->currency('price', '单价')->symbol('￥');
-              $form->editor('des', '商品介绍');
+        return Admin::form(Category::class, function (Form $form) {
+            $form->text('name', '分类名');
+            $form->number('sort', '排序');
         });
     }
 }

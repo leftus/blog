@@ -19,4 +19,6 @@ Route::group([
     $router->resource('packs', PackController::class);
     $router->resource('products', ProductController::class);
     $router->resource('users', UserController::class);
+    $router->resource('categorys', CategoryController::class);
+    $router->resource('pictures', PictureController::class);
 });
