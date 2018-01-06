@@ -111,6 +111,16 @@
         console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
     });
     $('img.lazy').lazyLoad();
+    $('.grids-item').each(function(){
+      $(this).hover(
+        function(){
+          $(this).addClass('active');
+        },
+        function(){
+          $(this).removeClass('active');
+        }
+      );
+    })
 </script>
 </body>
 </html>
