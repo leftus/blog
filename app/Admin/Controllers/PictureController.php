@@ -91,7 +91,7 @@ class PictureController extends Controller
     protected function form()
     {
         return Admin::form(Picture::class, function (Form $form) {
-          $form->image('path','图片')->crop(400,236);
+          $form->image('path','图片')->crop(800,472);
           $form->number('sort','排序');
           $form->textarea('des','描述');
         });
