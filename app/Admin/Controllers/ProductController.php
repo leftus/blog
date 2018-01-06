@@ -92,7 +92,7 @@ class ProductController extends Controller
     protected function form()
     {
         return Admin::form(Product::class, function (Form $form) {
-              $form->image('images', '图片');
+              $form->image('images', '图片')->crop(400,236);
               $form->text('name', '名称');
               $form->number('quantity', '数量');
               $form->currency('price', '单价')->symbol('￥');
