@@ -8,6 +8,9 @@
 .active{
   background-color:#FF5E53;
 }
+.active .grids-txt{
+  color:#FFFFFF;
+}
 .tabbar-item.tabbar-active{
   color:#FF685D;
 }
