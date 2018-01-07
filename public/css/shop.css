@@ -8,9 +8,6 @@
 .active{
   background-color:#FF5E53;
 }
-.active .grids-txt{
+.active .scrolltab-title{
   color:#FFFFFF;
-}
-.tabbar-item.tabbar-active{
-  color:#FF685D;
 }

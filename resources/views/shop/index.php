@@ -14,7 +14,7 @@
     <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.flexible.js");?>"></script>
 </head>
 <body>
-  <div class="m-slider" id="J_Slider">
+  <div class="m-slider" data-ydui-slider="{autoplay: 3000}">
       <div class="slider-wrapper">
         <?php foreach($pictures as $picture):?>
           <div class="slider-item">
@@ -27,17 +27,6 @@
       <div class="slider-pagination"></div><!-- 分页标识 -->
   </div>
 
-
-  <div class="m-grids-3">
-    <a href="<?php echo url('/');?>" class="grids-item <?php echo ($current_category==0)?'active':'';?>">
-        <div class="grids-txt"><span>全部</span></div>
-    </a>
-    <?php foreach($categorys as $category):?>
-        <a href="<?php echo url('/',['category_id'=>$category->id]);?>" class="grids-item <?php echo ($category->id==$current_category)?'active':'';?>">
-            <div class="grids-txt"><span><?php echo $category->name;?></span></div>
-        </a>
-    <?php endforeach;?>
-  </div>
 
   <article class="m-list list-theme1">
     <?php foreach($products as $product):?>
@@ -59,6 +48,7 @@
     <?php endforeach;?>
   </article>
 
+
   <footer class="m-tabbar">
       <a href="<?php echo url('/');?>" class="tabbar-item tabbar-active">
           <span class="tabbar-icon">
@@ -66,7 +56,7 @@
           </span>
           <span class="tabbar-txt">首页</span>
       </a>
-      <a href="#" class="tabbar-item">
+      <a href="<?php echo url('/categorys');?>" class="tabbar-item">
           <span class="tabbar-icon">
               <i class="icon-search"></i>
           </span>
@@ -92,27 +82,6 @@
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
 
 <script>
-    $('#J_Slider').slider({
-        speed: 200,
-        autoplay: 2000,
-        lazyLoad: true
-    });
-
-    var $tab = $('#J_Tab');
-
-    $tab.tab({
-        nav: '.tab-nav-item',
-        panel: '.tab-panel-item',
-        activeClass: 'tab-active'
-    });
-
-    $tab.find('.tab-nav-item').on('open.ydui.tab', function (e) {
-        console.log('索引：%s - [%s]正在打开', e.index, $(this).text());
-    });
-
-    $tab.find('.tab-nav-item').on('opened.ydui.tab', function (e) {
-        console.log('索引：%s - [%s]已经打开了', e.index, $(this).text());
-    });
     $('img.lazy').lazyLoad();
 </script>
 </body>

@@ -18,5 +18,6 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['namespace' => 'shop'], function(){
-  Route::get('/{category_id?}', 'IndexController@index');
+  Route::get('/', 'IndexController@index');
+  Route::get('/categorys/{category_id?}', 'IndexController@categorys');
 });
