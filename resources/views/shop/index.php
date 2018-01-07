@@ -14,6 +14,7 @@
     <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.flexible.js");?>"></script>
 </head>
 <body>
+<section class="g-flexview">
   <div class="m-slider" data-ydui-slider="{autoplay: 3000}">
       <div class="slider-wrapper">
         <?php foreach($pictures as $picture):?>
@@ -27,27 +28,27 @@
       <div class="slider-pagination"></div><!-- 分页标识 -->
   </div>
 
-
-  <article class="m-list list-theme4">
-    <?php foreach($products as $product):?>
-      <a href="#" class="list-item">
-          <div class="list-img">
-              <img class="lazy" data-url="<?php echo asset($product->images);?>">
-          </div>
-          <div class="list-mes">
-              <h3 class="list-title"><?php echo $product->name;?></h3>
-              <div class="list-mes-item">
-                  <div>
-                      <span class="list-price"><?php echo $product->price;?></span><span>元</span>
-                      <span class="list-del-price"><?php echo $product->quantity;?></span>
-                  </div>
-                  <div></div>
-              </div>
-          </div>
-      </a>
-    <?php endforeach;?>
-  </article>
-
+  <div class="g-scrollview">
+    <article class="m-list list-theme3">
+      <?php foreach($products as $product):?>
+        <a href="#" class="list-item">
+            <div class="list-img">
+                <img class="lazy" data-url="<?php echo asset($product->images);?>">
+            </div>
+            <div class="list-mes">
+                <h3 class="list-title"><?php echo $product->name;?></h3>
+                <div class="list-mes-item">
+                    <div>
+                        <span class="list-price"><?php echo $product->price;?></span><span>元</span>
+                        <span class="list-del-price"><?php echo $product->quantity;?></span>
+                    </div>
+                    <div></div>
+                </div>
+            </div>
+        </a>
+      <?php endforeach;?>
+    </article>
+  </div>
 
   <footer class="m-tabbar">
       <a href="<?php echo url('/');?>" class="tabbar-item tabbar-active">
@@ -75,7 +76,7 @@
           <span class="tabbar-txt">联系我们</span>
       </a>
   </footer>
-
+</section>
 <!-- 引入jQuery 2.0+ -->
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
