@@ -30,7 +30,7 @@
       </div>
       <div class="scrolltab-content">
         <div class="g-scrollview">
-          <article class="m-list list-theme1">
+          <article class="m-list list-theme3">
             <?php foreach($products as $product):?>
               <a href="#" class="list-item">
                   <div class="list-img">
