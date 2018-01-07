@@ -14,7 +14,7 @@
     <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.flexible.js");?>"></script>
 </head>
 <body>
-
+<section class="g-flexview">
   <div class="m-scrolltab"><!-- 添加data-ydui-scrolltab就可以啦 -->
       <div class="scrolltab-nav">
         <a href="<?php echo url('/categorys',['category_id'=>0]);?>" class="scrolltab-item <?php echo ($current_category==0)?'active':'';?>">
@@ -29,29 +29,29 @@
         <?php endforeach;?>
       </div>
       <div class="scrolltab-content">
-        <article class="m-list list-theme1">
-          <?php foreach($products as $product):?>
-            <a href="#" class="list-item">
-                <div class="list-img">
-                    <img class="lazy" data-url="<?php echo asset($product->images);?>">
-                </div>
-                <div class="list-mes">
-                    <h3 class="list-title"><?php echo $product->name;?></h3>
-                    <div class="list-mes-item">
-                        <div>
-                            <span class="list-price"><?php echo $product->price;?></span><span>元</span>
-                            <span class="list-del-price"><?php echo $product->quantity;?></span>
-                        </div>
-                        <div></div>
-                    </div>
-                </div>
-            </a>
-          <?php endforeach;?>
-        </article>
+        <div class="g-scrollview">
+          <article class="m-list list-theme1">
+            <?php foreach($products as $product):?>
+              <a href="#" class="list-item">
+                  <div class="list-img">
+                      <img class="lazy" data-url="<?php echo asset($product->images);?>">
+                  </div>
+                  <div class="list-mes">
+                      <h3 class="list-title"><?php echo $product->name;?></h3>
+                      <div class="list-mes-item">
+                          <div>
+                              <span class="list-price"><?php echo $product->price;?></span><span>元</span>
+                              <span class="list-del-price"><?php echo $product->quantity;?></span>
+                          </div>
+                          <div></div>
+                      </div>
+                  </div>
+              </a>
+            <?php endforeach;?>
+          </article>
+        </div>
       </div>
   </div>
-
-
 
   <footer class="m-tabbar">
       <a href="<?php echo url('/');?>" class="tabbar-item">
@@ -79,7 +79,7 @@
           <span class="tabbar-txt">联系我们</span>
       </a>
   </footer>
-
+</section>
 <!-- 引入jQuery 2.0+ -->
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
