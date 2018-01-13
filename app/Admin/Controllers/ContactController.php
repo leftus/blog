@@ -84,8 +84,8 @@ class ContactController extends Controller
             $grid->name('姓名');
             $grid->mobile('电话');
             $grid->email('邮箱');
-            $grid->content('内容');
-            $grid->created_at('时间');
+            // $grid->content('内容');
+            // $grid->created_at('时间');
         });
     }
 

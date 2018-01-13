@@ -53,7 +53,7 @@
       </div>
   </div>
 
-  <footer class="m-tabbar">
+  <footer class="m-tabbar tabbar-fixed">
       <a href="<?php echo url('/');?>" class="tabbar-item">
           <span class="tabbar-icon">
               <i class="icon-home"></i>
@@ -72,7 +72,7 @@
           </span>
           <span class="tabbar-txt">订单中心</span>
       </a>
-      <a href="#" class="tabbar-item">
+      <a href="<?php echo url('/contacts');?>" class="tabbar-item">
           <span class="tabbar-icon">
               <i class="icon-ucenter"></i>
           </span>

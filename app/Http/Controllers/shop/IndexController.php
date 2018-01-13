@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Category;
 use App\Product;
 use App\Picture;
+use App\Contact;
 
 class IndexController extends Controller
 {
@@ -50,5 +51,12 @@ class IndexController extends Controller
       $data['categorys'] = $categorys;
       $data['current_category']=$category_id;
       return view('shop/categorys',$data);
+    }
+
+    public function contacts(){
+      $data=array();
+      $contacts = Contact::select('name','content','mobile')->first();
+      $data['contacts']=$contacts;
+      return view('shop/contacts',$data);
     }
 }

@@ -15,43 +15,36 @@
 </head>
 <body>
 <section class="g-flexview">
-  <div class="m-slider" data-ydui-slider="{autoplay: 3000}">
-      <div class="slider-wrapper">
-        <?php foreach($pictures as $picture):?>
-          <div class="slider-item">
-              <a href="#">
-                  <img class="lazy" data-url="<?php echo asset($picture->path);?>">
-              </a>
-          </div>
-        <?php endforeach;?>
-      </div>
-      <div class="slider-pagination"></div><!-- 分页标识 -->
-  </div>
+
+  <header class="m-navbar">
+      <a href="#" class="navbar-item"><i class="back-ico"></i></a>
+      <div class="navbar-center"><span class="navbar-title">联系我们</span></div>
+  </header>
 
   <div class="g-scrollview">
-    <article class="m-list list-theme3">
-      <?php foreach($products as $product):?>
-        <a href="#" class="list-item">
-            <div class="list-img">
-                <img class="lazy" data-url="<?php echo asset($product->images);?>">
-            </div>
-            <div class="list-mes">
-                <h3 class="list-title"><?php echo $product->name;?></h3>
-                <div class="list-mes-item">
-                    <div>
-                        <span class="list-price"><?php echo $product->price;?></span><span>元</span>
-                        <span class="list-del-price"><?php echo $product->quantity;?></span>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-        </a>
-      <?php endforeach;?>
-    </article>
+
+    <div class="m-cell">
+        <div class="cell-item">
+            <div class="cell-left"><i class="icon-location"></i>位置：</div>
+            <div class="cell-right"></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left"><i class="icon-ucenter"></i>联系人：</div>
+            <div class="cell-right"><?php echo $contacts->name;?></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left"><i class="icon-phone3"></i>电话：</div>
+            <div class="cell-right"><?php echo $contacts->mobile;?></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left"><i class="icon-question"></i>介绍：</div>
+            <div class="cell-right"><?php echo $contacts->content;?></div>
+        </div>
+    </div>
   </div>
 
   <footer class="m-tabbar tabbar-fixed">
-      <a href="<?php echo url('/');?>" class="tabbar-item tabbar-active">
+      <a href="<?php echo url('/');?>" class="tabbar-item">
           <span class="tabbar-icon">
               <i class="icon-home"></i>
           </span>
@@ -69,7 +62,7 @@
           </span>
           <span class="tabbar-txt">订单中心</span>
       </a>
-      <a href="<?php echo url('/contacts');?>" class="tabbar-item">
+      <a href="<?php echo url('/contacts');?>" class="tabbar-item tabbar-active">
           <span class="tabbar-icon">
               <i class="icon-ucenter"></i>
           </span>
@@ -81,9 +74,5 @@
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
-
-<script>
-    $('img.lazy').lazyLoad();
-</script>
 </body>
 </html>
