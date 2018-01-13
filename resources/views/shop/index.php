@@ -15,24 +15,25 @@
 </head>
 <body>
 
-  <header class="m-navbar">
+  <header class="m-navbar navbar-fixed">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title">首页</span></div>
   </header>
 
-  <div class="m-slider" data-ydui-slider="{autoplay: 3000}">
-      <div class="slider-wrapper">
-        <?php foreach($pictures as $picture):?>
-          <div class="slider-item">
-              <a href="#">
-                  <img src="<?php echo asset($picture->path);?>">
-              </a>
-          </div>
-        <?php endforeach;?>
-      </div>
-      <div class="slider-pagination"></div><!-- 分页标识 -->
-  </div>
+  <div class="g-view">
 
+    <div class="m-slider" data-ydui-slider="{autoplay: 3000}">
+        <div class="slider-wrapper">
+          <?php foreach($pictures as $picture):?>
+            <div class="slider-item">
+                <a href="#">
+                    <img src="<?php echo asset($picture->path);?>">
+                </a>
+            </div>
+          <?php endforeach;?>
+        </div>
+        <div class="slider-pagination"></div><!-- 分页标识 -->
+    </div>
 
     <article class="m-list list-theme3">
       <?php foreach($products as $product):?>
@@ -53,6 +54,7 @@
         </a>
       <?php endforeach;?>
     </article>
+  </div>
 
   <footer class="m-tabbar tabbar-fixed">
       <a href="<?php echo url('/');?>" class="tabbar-item tabbar-active">
