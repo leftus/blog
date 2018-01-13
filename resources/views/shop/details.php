@@ -15,19 +15,13 @@
 </head>
 <body>
 
-  <header class="m-navbar navbar-fixed">
+  <header class="m-navbar">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title"><?php echo $product->name;?></span></div>
   </header>
 
-  <div class="m-slider">
-      <div class="slider-wrapper">
-          <div class="slider-item">
-              <a href="#">
-                  <img src="<?php echo asset($product->images);?>">
-              </a>
-          </div>
-      </div>
+  <div class="product_images">
+      <img src="<?php echo asset($product->images);?>">
   </div>
 
   <div class="g-view">
@@ -44,11 +38,8 @@
             <div class="cell-left">价格：</div>
             <div class="cell-right"><?php echo $product->price;?>元</div>
         </div>
-        <div class="cell-item">
-            <div class="cell-left">详情：</div>
-            <div class="cell-right"><?php echo $product->content;?></div>
-        </div>
     </div>
+    <div class="des"><?php echo $product->des;?></div>
   </div>
 
   <footer class="m-tabbar tabbar-fixed">

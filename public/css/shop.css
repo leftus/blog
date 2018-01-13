@@ -4,3 +4,15 @@
 .active .scrolltab-title{
   color:#FFFFFF;
 }
+.product_images{
+  background-color: #FFFFFF;
+  padding: 5px;
+}
+.product_images img{
+  margin:0 auto;
+}
+.des{
+  background-color: #FFFFFF;
+  padding: 10px;
+  font-size: 14px;
+}
