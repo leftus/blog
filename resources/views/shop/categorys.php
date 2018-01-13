@@ -20,6 +20,7 @@
       <div class="navbar-center"><span class="navbar-title">分类查找</span></div>
   </header>
 
+<div class="g-view">
   <div class="m-scrolltab"><!-- 添加data-ydui-scrolltab就可以啦 -->
       <div class="scrolltab-nav">
         <a href="<?php echo url('/categorys',['category_id'=>0]);?>" class="scrolltab-item <?php echo ($current_category==0)?'active':'';?>">
@@ -55,6 +56,7 @@
           </article>
       </div>
   </div>
+</div>
   <footer class="m-tabbar tabbar-fixed">
       <a href="<?php echo url('/');?>" class="tabbar-item">
           <span class="tabbar-icon">
