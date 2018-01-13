@@ -33,19 +33,19 @@
   <div class="g-view">
     <div class="m-cell">
         <div class="cell-item">
-            <div class="cell-left"><i class="icon-compose"></i>名称：</div>
+            <div class="cell-left">名称：</div>
             <div class="cell-right"><?php echo $product->name;?></div>
         </div>
         <div class="cell-item">
-            <div class="cell-left"><i class="icon-type"></i>分类：</div>
+            <div class="cell-left">分类：</div>
             <div class="cell-right"><?php echo $category->name;?></div>
         </div>
         <div class="cell-item">
-            <div class="cell-left"><em>¥</em>价格：</div>
+            <div class="cell-left">价格：</div>
             <div class="cell-right"><?php echo $product->price;?>元</div>
         </div>
         <div class="cell-item">
-            <div class="cell-left"><i class="icon-more"></i>详情：</div>
+            <div class="cell-left">详情：</div>
             <div class="cell-right"><?php echo $product->content;?></div>
         </div>
     </div>
