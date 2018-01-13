@@ -55,7 +55,7 @@ class IndexController extends Controller
 
     public function contacts(){
       $data=array();
-      $contacts = Contact::select('name','content','mobile')->first();
+      $contacts = Contact::select('name','address','content','mobile')->first();
       $data['contacts']=$contacts;
       return view('shop/contacts',$data);
     }

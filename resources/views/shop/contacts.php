@@ -25,8 +25,8 @@
 
     <div class="m-cell">
         <div class="cell-item">
-            <div class="cell-left"><i class="icon-location"></i>位置：</div>
-            <div class="cell-right"></div>
+            <div class="cell-left"><i class="icon-location"></i>地址：</div>
+            <div class="cell-right"><?php echo $contacts->address;?></div>
         </div>
         <div class="cell-item">
             <div class="cell-left"><i class="icon-ucenter"></i>联系人：</div>

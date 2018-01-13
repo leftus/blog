@@ -83,7 +83,8 @@ class ContactController extends Controller
             //$grid->disablePagination();
             $grid->name('姓名');
             $grid->mobile('电话');
-            $grid->email('邮箱');
+            $grid->address('地址');
+            //$grid->email('邮箱');
             // $grid->content('内容');
             // $grid->created_at('时间');
         });
@@ -99,7 +100,7 @@ class ContactController extends Controller
         return Admin::form(Contact::class, function (Form $form) {
           $form->text('name','姓名');
           $form->mobile('mobile','电话');
-          $form->email('email','邮箱');
+          $form->text('address','地址');
           $form->editor('content','介绍');
         });
     }
