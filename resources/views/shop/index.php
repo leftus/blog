@@ -15,6 +15,11 @@
 </head>
 <body>
 <section class="g-flexview">
+  <header class="m-navbar">
+      <a href="#" class="navbar-item"><i class="back-ico"></i></a>
+      <div class="navbar-center"><span class="navbar-title">首页</span></div>
+  </header>
+
   <div class="m-slider" data-ydui-slider="{autoplay: 3000}">
       <div class="slider-wrapper">
         <?php foreach($pictures as $picture):?>

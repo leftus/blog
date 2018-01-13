@@ -15,6 +15,11 @@
 </head>
 <body>
 <section class="g-flexview">
+  <header class="m-navbar">
+      <a href="#" class="navbar-item"><i class="back-ico"></i></a>
+      <div class="navbar-center"><span class="navbar-title">分类查找</span></div>
+  </header>
+
   <div class="m-scrolltab"><!-- 添加data-ydui-scrolltab就可以啦 -->
       <div class="scrolltab-nav">
         <a href="<?php echo url('/categorys',['category_id'=>0]);?>" class="scrolltab-item <?php echo ($current_category==0)?'active':'';?>">
