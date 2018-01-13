@@ -14,12 +14,12 @@
     <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.flexible.js");?>"></script>
 </head>
 <body>
-<section class="g-flexview">
+
   <header class="m-navbar">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title">分类查找</span></div>
   </header>
-<div class="g-scrollview">
+
   <div class="m-scrolltab"><!-- 添加data-ydui-scrolltab就可以啦 -->
       <div class="scrolltab-nav">
         <a href="<?php echo url('/categorys',['category_id'=>0]);?>" class="scrolltab-item <?php echo ($current_category==0)?'active':'';?>">
@@ -55,7 +55,6 @@
           </article>
       </div>
   </div>
-</div>
   <footer class="m-tabbar tabbar-fixed">
       <a href="<?php echo url('/');?>" class="tabbar-item">
           <span class="tabbar-icon">
@@ -82,7 +81,6 @@
           <span class="tabbar-txt">联系我们</span>
       </a>
   </footer>
-</section>
 <!-- 引入jQuery 2.0+ -->
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->

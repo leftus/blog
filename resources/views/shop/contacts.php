@@ -14,14 +14,14 @@
     <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.flexible.js");?>"></script>
 </head>
 <body>
-<section class="g-flexview">
+
 
   <header class="m-navbar">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title">联系我们</span></div>
   </header>
 
-  <div class="g-scrollview">
+
 
     <div class="m-cell">
         <div class="cell-item">
@@ -41,7 +41,7 @@
             <div class="cell-right"><?php echo $contacts->content;?></div>
         </div>
     </div>
-  </div>
+
 
   <footer class="m-tabbar tabbar-fixed">
       <a href="<?php echo url('/');?>" class="tabbar-item">
@@ -69,7 +69,6 @@
           <span class="tabbar-txt">联系我们</span>
       </a>
   </footer>
-</section>
 <!-- 引入jQuery 2.0+ -->
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
