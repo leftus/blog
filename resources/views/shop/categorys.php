@@ -36,9 +36,9 @@
       <div class="scrolltab-content">
           <article class="m-list list-theme3">
             <?php foreach($products as $product):?>
-              <a href="#" class="list-item">
+              <a href="<?php echo url('details',[$product->id]);?>" class="list-item">
                   <div class="list-img">
-                      <img class="lazy" data-url="<?php echo asset($product->images);?>">
+                      <img src="<?php echo asset($product->images);?>">
                   </div>
                   <div class="list-mes">
                       <h3 class="list-title"><?php echo $product->name;?></h3>
@@ -88,8 +88,5 @@
 <!-- 引入YDUI脚本 -->
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
 
-<script>
-    $('img.lazy').lazyLoad();
-</script>
 </body>
 </html>

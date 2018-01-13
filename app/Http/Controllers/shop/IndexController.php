@@ -53,6 +53,15 @@ class IndexController extends Controller
       return view('shop/categorys',$data);
     }
 
+    public function details($product_id=0){
+      $data=array();
+      $product = Product::find($product_id);
+      $category = $product->category()->first();
+      $data['category']=$category;
+      $data['product']=$product;
+      return view('shop/details',$data);
+    }
+
     public function contacts(){
       $data=array();
       $contacts = Contact::select('name','address','content','mobile')->first();

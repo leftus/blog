@@ -15,48 +15,45 @@
 </head>
 <body>
 <section class="g-flexview">
+
   <header class="m-navbar">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
-      <div class="navbar-center"><span class="navbar-title">首页</span></div>
+      <div class="navbar-center"><span class="navbar-title"><?php echo $product->name;?></span></div>
   </header>
 
-  <div class="m-slider" data-ydui-slider="{autoplay: 3000}">
+  <div class="m-slider">
       <div class="slider-wrapper">
-        <?php foreach($pictures as $picture):?>
           <div class="slider-item">
               <a href="#">
-                  <img src="<?php echo asset($picture->path);?>">
+                  <img src="<?php echo asset($product->images);?>">
               </a>
           </div>
-        <?php endforeach;?>
       </div>
-      <div class="slider-pagination"></div><!-- 分页标识 -->
   </div>
 
   <div class="g-scrollview">
-    <article class="m-list list-theme3">
-      <?php foreach($products as $product):?>
-        <a href="<?php echo url('details',[$product->id]);?>" class="list-item">
-            <div class="list-img">
-                <img src="<?php echo asset($product->images);?>">
-            </div>
-            <div class="list-mes">
-                <h3 class="list-title"><?php echo $product->name;?></h3>
-                <div class="list-mes-item">
-                    <div>
-                        <span class="list-price"><?php echo $product->price;?></span><span>元</span>
-                        <span class="list-del-price"><?php echo $product->quantity;?></span>
-                    </div>
-                    <div></div>
-                </div>
-            </div>
-        </a>
-      <?php endforeach;?>
-    </article>
+    <div class="m-cell">
+        <div class="cell-item">
+            <div class="cell-left"><i class="icon-compose"></i>名称：</div>
+            <div class="cell-right"><?php echo $product->name;?></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left"><i class="icon-type"></i>分类：</div>
+            <div class="cell-right"><?php echo $category->name;?></div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left"><em>¥</em>价格：</div>
+            <div class="cell-right"><?php echo $product->price;?>元</div>
+        </div>
+        <div class="cell-item">
+            <div class="cell-left"><i class="icon-more"></i>详情：</div>
+            <div class="cell-right"><?php echo $product->content;?></div>
+        </div>
+    </div>
   </div>
 
   <footer class="m-tabbar tabbar-fixed">
-      <a href="<?php echo url('/');?>" class="tabbar-item tabbar-active">
+      <a href="<?php echo url('/');?>" class="tabbar-item">
           <span class="tabbar-icon">
               <i class="icon-home"></i>
           </span>
@@ -86,5 +83,6 @@
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
+
 </body>
 </html>
