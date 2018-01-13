@@ -15,7 +15,7 @@
 </head>
 <body>
 <section class="g-flexview">
-  <header class="m-navbar">
+  <header class="m-navbar navbar-fixed">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title">分类查找</span></div>
   </header>

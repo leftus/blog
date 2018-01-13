@@ -15,16 +15,17 @@
 </head>
 <body>
 
-  <header class="m-navbar">
+  <header class="m-navbar navbar-fixed">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title"><?php echo $product->name;?></span></div>
   </header>
 
-  <div class="product_images">
-      <img src="<?php echo asset($product->images);?>">
-  </div>
-
   <div class="g-view">
+
+    <div class="product_images">
+        <img src="<?php echo asset($product->images);?>">
+    </div>
+
     <div class="m-cell">
         <div class="cell-item">
             <div class="cell-left">名称：</div>
@@ -39,6 +40,7 @@
             <div class="cell-right"><?php echo $product->price;?>元</div>
         </div>
     </div>
+
     <div class="des"><?php echo $product->des;?></div>
   </div>
 

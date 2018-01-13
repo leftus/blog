@@ -15,14 +15,12 @@
 </head>
 <body>
 
-
-  <header class="m-navbar">
+  <header class="m-navbar navbar-fixed">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title">联系我们</span></div>
   </header>
 
-
-
+  <div class="g-view">
     <div class="m-cell">
         <div class="cell-item">
             <div class="cell-left"><i class="icon-location"></i>地址：</div>
@@ -41,7 +39,7 @@
             <div class="cell-right"><?php echo $contacts->content;?></div>
         </div>
     </div>
-
+  </div>
 
   <footer class="m-tabbar tabbar-fixed">
       <a href="<?php echo url('/');?>" class="tabbar-item">
