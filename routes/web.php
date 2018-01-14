@@ -22,4 +22,5 @@ Route::group(['namespace' => 'shop'], function(){
   Route::get('/categorys/{category_id?}', 'IndexController@categorys');
   Route::get('/contacts', 'IndexController@contacts');
   Route::get('/details/{product_id?}', 'IndexController@details');
+  Route::get('/cart', 'IndexController@cart');
 });

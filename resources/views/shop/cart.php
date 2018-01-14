@@ -17,34 +17,11 @@
 
   <header class="m-navbar navbar-fixed">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
-      <div class="navbar-center"><span class="navbar-title"><?php echo $product->name;?></span></div>
-      <a href="#" class="navbar-item">
-          <i class="icon-shopcart-outline"></i>
-      </a>
+      <div class="navbar-center"><span class="navbar-title">购物车</span></div>
   </header>
 
   <div class="g-view">
-
-    <div class="product_images">
-        <img src="<?php echo asset($product->images);?>">
-    </div>
-
-    <div class="m-cell">
-        <div class="cell-item">
-            <div class="cell-left">名称：</div>
-            <div class="cell-right"><?php echo $product->name;?></div>
-        </div>
-        <div class="cell-item">
-            <div class="cell-left">分类：</div>
-            <div class="cell-right"><?php echo $category->name;?></div>
-        </div>
-        <div class="cell-item">
-            <div class="cell-left">价格：</div>
-            <div class="cell-right"><?php echo $product->price;?>元</div>
-        </div>
-    </div>
-
-    <div class="des"><?php echo $product->des;?></div>
+    
   </div>
 
   <footer class="m-tabbar tabbar-fixed">
@@ -60,7 +37,7 @@
           </span>
           <span class="tabbar-txt">分类查找</span>
       </a>
-      <a href="<?php echo url('/cart');?>" class="tabbar-item">
+      <a href="<?php echo url('/cart');?>" class="tabbar-item tabbar-active">
           <span class="tabbar-icon">
               <i class="icon-shopcart"></i>
           </span>
@@ -77,6 +54,5 @@
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
-
 </body>
 </html>

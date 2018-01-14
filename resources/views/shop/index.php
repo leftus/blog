@@ -69,11 +69,11 @@
           </span>
           <span class="tabbar-txt">分类查找</span>
       </a>
-      <a href="#" class="tabbar-item">
+      <a href="<?php echo url('/cart');?>" class="tabbar-item">
           <span class="tabbar-icon">
-              <i class="icon-order"></i>
+              <i class="icon-shopcart"></i>
           </span>
-          <span class="tabbar-txt">订单中心</span>
+          <span class="tabbar-txt">购物车</span>
       </a>
       <a href="<?php echo url('/contacts');?>" class="tabbar-item">
           <span class="tabbar-icon">

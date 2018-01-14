@@ -68,4 +68,9 @@ class IndexController extends Controller
       $data['contacts']=$contacts;
       return view('shop/contacts',$data);
     }
+
+    public function cart(){
+      $data=array();
+      return view('shop/cart',$data);
+    }
 }
