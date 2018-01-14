@@ -19,3 +19,9 @@
 .scrolltab-item{
   padding: 0;
 }
+.video{
+  margin:0 auto;
+  padding: 10px;
+  background-color: #ffffff;
+  margin:10px 0;
+}

@@ -29,7 +29,7 @@ class IndexController extends Controller
     public function index()
     {
         $data=array();
-        $products = Product::select('id','name','price','images')->orderBy('sort','asc')->get();
+        $products = Product::select('id','name','price','images')->where('hot',0)->orderBy('sort','asc')->get();
         $pictures = Picture::select('id','path')->orderBy('sort','asc')->get();
         $data['pictures']=$pictures;
         $data['products']=$products;

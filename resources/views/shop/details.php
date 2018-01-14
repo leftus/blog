@@ -29,11 +29,25 @@
         <img src="<?php echo asset($product->images);?>">
     </div>
 
+    <div class="video">
+      <video width="320" height="240" controls>
+          <source src="<?php echo asset($product->video);?>" type="video/mp4">
+          <source src="<?php echo asset($product->video);?>" type="video/ogg">
+          您的浏览器不支持 video 标签。
+      </video>
+    </div>
+
     <div class="m-cell">
         <div class="cell-item">
             <div class="cell-left">名称：</div>
             <div class="cell-right"><?php echo $product->name;?></div>
         </div>
+
+        <div class="cell-item">
+            <div class="cell-left">规格：</div>
+            <div class="cell-right"><?php echo $product->norms;?></div>
+        </div>
+
         <div class="cell-item">
             <div class="cell-left">分类：</div>
             <div class="cell-right"><?php echo $category->name;?></div>
