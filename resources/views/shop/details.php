@@ -25,12 +25,8 @@
 
   <div class="g-view">
 
-    <div class="product_images">
-        <img src="<?php echo asset($product->images);?>">
-    </div>
-
     <div class="video">
-      <video width="320" height="240" controls>
+      <video width="320" height="240" controls poster="<?php echo asset($product->images);?>">
           <source src="<?php echo asset($product->video);?>" type="video/mp4">
           <source src="<?php echo asset($product->video);?>" type="video/ogg">
           您的浏览器不支持 video 标签。
