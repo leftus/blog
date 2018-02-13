@@ -18,10 +18,9 @@ class IndexController extends Controller
      */
     public function __construct()
     {
-        $this->request = request();
         $this->middleware(function($request,$next){
           $user_id=session('user_id');
-          var_dump($user_id);
+          //var_dump($user_id);
           if($user_id){
             return $next($request);
           }else{
