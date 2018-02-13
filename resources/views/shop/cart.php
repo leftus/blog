@@ -22,10 +22,10 @@
 
   <div class="g-view">
     <div class="m-grids-2">
-        <div class="grids-item">
+        <div class="grids-item" style="border:none;">
             <button type="button" class="btn-block btn-hollow">总价</button>
         </div>
-        <div class="grids-item">
+        <div class="grids-item" style="border:none;">
             <button  id="J_Alert" type="button" class="btn-block btn-primary">结算</button>
         </div>
     </div>    
