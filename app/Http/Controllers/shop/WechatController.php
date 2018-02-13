@@ -19,9 +19,9 @@ class WechatController extends Controller{
         if($user){
           session(['uid'=>$user->id]);
         }else{
-          $data['openid']=$obj->openid;
-          $uid = $wechat->getInsertId($data);
-          session(['uid'=>$uid]);
+          $wechat->openid=$obj->openid;
+          $wechat->save();
+          session(['uid'=>$wechat->id]);
         }
         return redirect('/');
       }
