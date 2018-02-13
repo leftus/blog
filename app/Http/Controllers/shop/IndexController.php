@@ -18,13 +18,11 @@ class IndexController extends Controller
      */
     public function __construct(Request $request)
     {
-      $this->middleware(function ($request) {
         $user_id=session('user_id');
         var_dump($user_id);
         if(!$user_id){
           return redirect('/wechat');
         }
-      });
       //$this->middleware('auth');
     }
 
