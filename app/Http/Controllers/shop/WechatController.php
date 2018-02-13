@@ -17,11 +17,11 @@ class WechatController extends Controller{
         $wechat = new Wechat;
         $user = $wechat->where('openid', $obj->openid)->first();
         if($user){
-          session(['uid'=>$user->id]);
+          session(['user_id'=>$user->id]);
         }else{
           $wechat->openid=$obj->openid;
           $wechat->save();
-          session(['uid'=>$wechat->id]);
+          session(['user_id'=>$wechat->id]);
         }
         return redirect('/');
       }

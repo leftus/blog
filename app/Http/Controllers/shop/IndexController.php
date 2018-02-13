@@ -18,9 +18,9 @@ class IndexController extends Controller
      */
     public function __construct()
     {
-        $uid=session('uid');
-        var_dump($uid);
-        if($uid){
+        $user_id=session('user_id');
+        var_dump($user_id);
+        if($user_id){
           
         }else{
           return redirect('/wechat');
