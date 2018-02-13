@@ -5,7 +5,6 @@ namespace App\Http\Controllers\shop;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Wechat;
-use Illuminate\Support\Facades\Session;
 
 class WechatController extends Controller{
   function index(Request $request){
@@ -18,11 +17,11 @@ class WechatController extends Controller{
         $wechat = new Wechat;
         $user = $wechat->where('openid', $obj->openid)->first();
         if($user){
-          Session::put('uid',$user->id);
+          session(['uid'=>$user->id]);
         }else{
           $data['openid']=$obj->openid;
           $uid = $wechat->getInsertId($data);
-          Session::put('uid',$uid);
+          session(['uid'=>$uid]);
         }
         return redirect('/');
       }

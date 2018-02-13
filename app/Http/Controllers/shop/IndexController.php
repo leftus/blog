@@ -8,7 +8,6 @@ use App\Category;
 use App\Product;
 use App\Picture;
 use App\Contact;
-use Illuminate\Support\Facades\Session;
 
 class IndexController extends Controller
 {
@@ -19,7 +18,7 @@ class IndexController extends Controller
      */
     public function __construct()
     {
-        $uid=Session::get('uid');
+        $uid=session('uid');
         var_dump($uid);
         if($uid){
           
