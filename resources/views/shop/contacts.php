@@ -32,7 +32,7 @@
         </div>
         <div class="cell-item">
             <div class="cell-left"><i class="icon-phone3"></i>电话：</div>
-            <div class="cell-right"><a href="tel:<?php echo $contacts->mobile;?>"><?php echo $contacts->mobile;?></a></div>
+            <div class="cell-right tel"><a href="tel:<?php echo $contacts->mobile;?>"><?php echo $contacts->mobile;?></a></div>
         </div>
         <div class="cell-item">
             <div class="cell-left"><i class="icon-question"></i>介绍：</div>
