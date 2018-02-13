@@ -16,13 +16,13 @@ class WechatController extends Controller{
       if($obj->access_token){
         $wechat = new Wechat;
         $user = $wechat->where('openid', $obj->openid)->first();
-        var_dump($user);die();
+        //var_dump($user);die();
         if($user){
-          session('uid',$user->id);
+          session(['uid'=>$user->id]);
         }else{
           $wechat->openid=$obj->openid;
           $wechat->save();
-          session('uid',$wechat->id);
+          session(['uid'=>$wechat->id]);
         }
         return redirect('/');
       }
