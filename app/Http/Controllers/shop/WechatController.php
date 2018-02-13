@@ -23,6 +23,7 @@ class WechatController extends Controller{
           $uid = $wechat->getInsertId($data);
           session(['uid'=>$uid]);
         }
+        var_dump(session('uid'));die();
         return redirect('/');
       }
     }else{
