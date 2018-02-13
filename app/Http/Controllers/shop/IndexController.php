@@ -19,7 +19,7 @@ class IndexController extends Controller
     public function __construct()
     {
         $uid=session('uid');
-        var_dump($uid);
+        var_dump($_SESSION);
         if($uid){
           
         }else{
