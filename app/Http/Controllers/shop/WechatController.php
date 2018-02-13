@@ -16,7 +16,6 @@ class WechatController extends Controller{
       if($obj->access_token){
         $wechat = new Wechat;
         $user = $wechat->where('openid', $obj->openid)->first();
-        var_dump($user->id);die();
         if($user){
           session(['uid'=>$user->id]);
         }else{
