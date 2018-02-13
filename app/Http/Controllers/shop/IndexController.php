@@ -8,6 +8,7 @@ use App\Category;
 use App\Product;
 use App\Picture;
 use App\Contact;
+use App\Cart;
 
 class IndexController extends Controller
 {
@@ -80,6 +81,9 @@ class IndexController extends Controller
 
     public function cart(){
       $data=array();
+      $contacts = Contact::select('name','address','content','mobile')->first();
+      $data['contacts']=$contacts;
+      
       return view('shop/cart',$data);
     }
 }
