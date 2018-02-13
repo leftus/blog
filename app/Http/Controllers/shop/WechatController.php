@@ -24,7 +24,7 @@ class WechatController extends Controller{
           $user_id = $wechat->id;
         }
         session(['user_id'=>$user_id]);
-        return redirect('/');
+        return redirect()->action('IndexController@index');
       }
     }else{
       session(['state' => 'nnLGhnYJxkf4H3uMMf4h5O4v3l2NGnU4wGlUrcxiwSg']);
