@@ -8,7 +8,6 @@ use App\Category;
 use App\Product;
 use App\Picture;
 use App\Contact;
-use Closure;
 
 class IndexController extends Controller
 {
@@ -17,8 +16,9 @@ class IndexController extends Controller
      *
      * @return void
      */
-    public function __construct(Request $request,Closure $next)
+    public function __construct()
     {
+        $this->request = request();
         $this->middleware(function($request,$next){
           $user_id=session('user_id');
           var_dump($user_id);
