@@ -18,7 +18,7 @@ class IndexController extends Controller
      */
     public function __construct()
     {
-        $uid=session()->all();
+        $uid=session('uid');
         var_dump($uid);
         if($uid){
           
