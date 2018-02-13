@@ -19,8 +19,9 @@ class IndexController extends Controller
     public function __construct()
     {
         $uid=session('uid');
-        var_dump($uid);
-        if(empty($uid)){
+        if($uid){
+          
+        }else{
           return redirect('/wechat');
         }
         //$this->middleware('auth');
