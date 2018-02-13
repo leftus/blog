@@ -21,19 +21,17 @@
   </header>
 
   <div class="g-view">
-    
+    <div class="m-grids-2">
+            <a href="#" class="grids-item">
+                <div class="grids-txt"><span>总价</span></div>
+            </a>
+            <a href="#" class="grids-item">
+                <div class="grids-txt"><span>结算</span></div>
+            </a>    
+        </div>    
   </div>
 
   <footer class="m-tabbar tabbar-fixed">
-    <div class="m-grids-2">
-        <a href="#" class="grids-item">
-            <div class="grids-txt"><span>总价</span></div>
-        </a>
-        <a href="#" class="grids-item">
-            <div class="grids-txt"><span>结算</span></div>
-        </a>    
-    </div>
-    <div class="menu">
       <a href="<?php echo url('/');?>" class="tabbar-item">
           <span class="tabbar-icon">
               <i class="icon-home"></i>
@@ -58,7 +56,6 @@
           </span>
           <span class="tabbar-txt">联系我们</span>
       </a>
-    </div>
   </footer>
 <!-- 引入jQuery 2.0+ -->
 <script src="<?php echo asset("js/app.js");?>"></script>
