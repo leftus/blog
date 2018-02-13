@@ -18,17 +18,13 @@
   <header class="m-navbar navbar-fixed">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title">购物车</span></div>
+      <a href="#" class="navbar-item" id="J_Alert">
+        结算
+      </a>
   </header>
 
   <div class="g-view">
-    <div class="m-grids-2">
-        <a href="#" class="grids-item">
-            <div class="grids-txt"><span>总价</span></div>
-        </a>
-        <a href="#" class="grids-item" id="J_Alert">
-            <div class="grids-txt"><span>结算</span></div>
-        </a>
-    </div>    
+  
   </div>
 
   <footer class="m-tabbar tabbar-fixed">
