@@ -18,6 +18,7 @@ class IndexController extends Controller
      */
     public function __construct()
     {
+        $this->middleware('web');
         $user_id=session('user_id');
         var_dump($user_id);
         if($user_id){
