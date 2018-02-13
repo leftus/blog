@@ -17,16 +17,13 @@ class WechatController extends Controller{
         $wechat = new Wechat;
         $user = $wechat->where('openid', $obj->openid)->first();
         if($user){
-          $request->session()->put('user_id', $user->id);
-          //session(['user_id'=>$user->id]);
+          $user_id=$user->id;
         }else{
           $wechat->openid=$obj->openid;
           $wechat->save();
-          $request->session()->put('user_id', $wechat->id);
-          //session(['user_id'=>$wechat->id]);
+          $user_id = $wechat->id;
         }
-        //var_dump(session('user_id'));die();
-        return redirect('/');
+        return redirect('/')->with('user_id',$user_id);
       }
     }else{
       session(['state' => 'nnLGhnYJxkf4H3uMMf4h5O4v3l2NGnU4wGlUrcxiwSg']);
