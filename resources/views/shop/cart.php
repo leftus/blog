@@ -69,7 +69,7 @@
         var dialog = win.YDUI.dialog;
         /* 普通提示框*/
         $('#J_Alert').on('click', function () {
-            dialog.alert('消息一出，休想滚动屏幕【移动终端】！');
+            dialog.alert("请拨打<a href='tel:<?php echo $contacts->mobile;?>'><?php echo $contacts->mobile;?></a>联系我们，或上门取货，地址:<?php echo $contacts->address?>");
         });
     }(window, jQuery);
 </script>
