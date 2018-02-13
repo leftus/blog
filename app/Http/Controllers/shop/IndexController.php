@@ -33,6 +33,7 @@ class IndexController extends Controller
      */
     public function index()
     {
+        var_dump(session('user_id'));
         $data=array();
         $products = Product::select('id','name','price','images')->where('hot',1)->orderBy('sort','asc')->get();
         $pictures = Picture::select('id','path')->orderBy('sort','asc')->get();
