@@ -8,6 +8,7 @@ use App\Category;
 use App\Product;
 use App\Picture;
 use App\Contact;
+use Closure;
 
 class IndexController extends Controller
 {
@@ -16,13 +17,17 @@ class IndexController extends Controller
      *
      * @return void
      */
-    public function __construct(Request $request)
+    public function __construct(Request $request,Closure $next)
     {
-        $user_id=session('user_id');
-        var_dump($user_id);
-        if(!$user_id){
-          return redirect('/wechat');
-        }
+        $this->middleware(function($request,$next){
+          $user_id=session('user_id');
+          var_dump($user_id);
+          if($user_id){
+            return $next($request);
+          }else{
+            return redirect('/wechat');
+          }          
+        });
       //$this->middleware('auth');
     }
 
@@ -33,7 +38,6 @@ class IndexController extends Controller
      */
     public function index()
     {
-        var_dump(session('user_id'));
         $data=array();
         $products = Product::select('id','name','price','images')->where('hot',1)->orderBy('sort','asc')->get();
         $pictures = Picture::select('id','path')->orderBy('sort','asc')->get();
