@@ -22,13 +22,9 @@
 
   <div class="g-view">
     <div class="m-grids-2">
-            <a href="#" class="grids-item">
-                <div class="grids-txt"><span>总价</span></div>
-            </a>
-            <a href="#" class="grids-item">
-                <div class="grids-txt"><span>结算</span></div>
-            </a>    
-        </div>    
+        <button type="button" class="btn-block btn-hollow grids-item">总价</button>
+        <button  id="J_Alert" type="button" class="btn-block btn-primary grids-item">结算</button>
+    </div>    
   </div>
 
   <footer class="m-tabbar tabbar-fixed">
@@ -57,9 +53,21 @@
           <span class="tabbar-txt">联系我们</span>
       </a>
   </footer>
+
+  <div>
+  </div>
 <!-- 引入jQuery 2.0+ -->
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
+<script>
+    !function (win, $) {
+        var dialog = win.YDUI.dialog;
+        /* 普通提示框*/
+        $('#J_Alert').on('click', function () {
+            dialog.alert('消息一出，休想滚动屏幕【移动终端】！');
+        });
+    }(window, jQuery);
+</script>
 </body>
 </html>
