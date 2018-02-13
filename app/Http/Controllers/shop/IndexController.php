@@ -18,6 +18,10 @@ class IndexController extends Controller
      */
     public function __construct()
     {
+        $uid=session('uid');
+        if(!$uid){
+          return redirect('/wechat');
+        }
         //$this->middleware('auth');
     }
 

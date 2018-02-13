@@ -4,6 +4,7 @@ namespace App\Http\Controllers\shop;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Wechat;
 
 class WechatController extends Controller{
   function index(Request $request){
@@ -13,7 +14,15 @@ class WechatController extends Controller{
       $res = file_get_contents($token_url);
       $obj=json_decode($res);
       if($obj->access_token){
-        session('openid',$obj->openid);
+        $wechat = new Wechat;
+        $user = $wechat->where('openid', $obj->openid)->first();
+        if($user){
+          session('uid',$user->id);
+        }else{
+          $wechat->openid=$obj->openid;
+          $wechat->save();
+          session('uid',$wechat->id);
+        }
         return redirect('/');
       }
     }else{
