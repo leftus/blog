@@ -23,6 +23,7 @@ class WechatController extends Controller{
           $wechat->save();
           session(['user_id'=>$wechat->id]);
         }
+        session()->save();
         //var_dump(session('user_id'));die();
         return redirect('/');
       }
