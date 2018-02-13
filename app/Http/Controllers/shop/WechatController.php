@@ -9,7 +9,7 @@ class WechatController extends Controller{
   function index(Request $request){
     $code = $request->code;
     if($code){
-      $token_url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".config('wechat.mp.appid')."&secret=".config('wechat.mp.appsecret')."&code=CODE&grant_type=authorization_code";
+      $token_url="https://api.weixin.qq.com/sns/oauth2/access_token?appid=".config('wechat.mp.appid')."&secret=".config('wechat.mp.appsecret')."&code=".$code."&grant_type=authorization_code";
       $res = file_get_contents($token_url);
       var_dump($res);
     }else{
