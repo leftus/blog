@@ -23,4 +23,5 @@ Route::group(['namespace' => 'shop'], function(){
   Route::get('/contacts', 'IndexController@contacts');
   Route::get('/details/{product_id?}', 'IndexController@details');
   Route::get('/cart', 'IndexController@cart');
+  Route::get('/wechat', 'WechatController@index');
 });
