@@ -21,7 +21,7 @@
   </header>
 
   <div class="g-view">
-    <iframe width='560' height='440' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='http://f.amap.com/15B2B_0FF4esu'></iframe>
+    <iframe width='420' height='350' frameborder='0' scrolling='no' marginheight='0' marginwidth='0' src='http://f.amap.com/66BnJ_0BA4ePa'></iframe>
     <div class="m-cell">
         <div class="cell-item">
             <div class="cell-left"><i class="icon-location"></i>地址：</div>
