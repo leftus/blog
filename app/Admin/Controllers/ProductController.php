@@ -97,7 +97,7 @@ class ProductController extends Controller
               $form->text('norms', '规格');
               $form->radio('hot','推荐')->options(['1' => '开', '0'=> '关'])->default('0');
               $form->select('category_id', '分类')->options(\App\Category::all()->pluck('name', 'id'))->default('0');
-              $form->image('images', '图片')->crop(300,300);
+              $form->image('images', '图片')->crop(400,400);
               $form->file('video','视频')->rules('mimes:mp4');
               $form->number('quantity', '数量');
               $form->currency('price', '单价')->symbol('￥');
