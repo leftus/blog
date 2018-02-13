@@ -16,9 +16,9 @@ class IndexController extends Controller
      *
      * @return void
      */
-    public function __construct()
+    public function __construct(Request $request)
     {
-        $uid=session('uid');
+        $uid=$request->session()->get('uid');
         var_dump($uid);
         if($uid){
           
