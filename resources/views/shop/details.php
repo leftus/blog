@@ -27,13 +27,13 @@
     
     <div class="video">
     <?php if($product->video):?>
-        <video width="350" height="280" controls poster="<?php echo asset($product->images);?>">
+        <video width="100%" height="280" controls poster="<?php echo asset($product->images);?>">
             <source src="<?php echo asset($product->video);?>" type="video/mp4">
             <source src="<?php echo asset($product->video);?>" type="video/ogg">
             您的浏览器不支持 video 标签。
         </video>
     <?php else:?>
-        <img src="<?php echo asset($product->images);?>" width="350">
+        <img src="<?php echo asset($product->images);?>" width="100%">
     <?php endif;?>
     </div>
 
