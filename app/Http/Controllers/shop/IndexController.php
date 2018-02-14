@@ -90,7 +90,6 @@ class IndexController extends Controller
               ->where('uid',$user_id)
               ->where('mount','>',0)
               ->get();
-              var_dump($carts);die();
       $data['carts']=$carts;
       return view('shop/cart',$data);
     }
