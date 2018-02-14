@@ -92,8 +92,8 @@ class IndexController extends Controller
       $product_id=$request->product_id;
       $cart = new Cart;
       $where=[
-        ['uid'=>$user_id],
-        ['product_id'=>$product_id]
+        ['uid','=',$user_id],
+        ['product_id','=',$product_id]
       ];
       $mycart=$cart->where($where)->first();
       if($mycart){
