@@ -24,13 +24,17 @@
   </header>
 
   <div class="g-view">
-
+    
     <div class="video">
-      <video width="320" height="240" controls poster="<?php echo asset($product->images);?>">
-          <source src="<?php echo asset($product->video);?>" type="video/mp4">
-          <source src="<?php echo asset($product->video);?>" type="video/ogg">
-          您的浏览器不支持 video 标签。
-      </video>
+    <?php if($product->video):?>
+        <video width="400" height="320" controls poster="<?php echo asset($product->images);?>">
+            <source src="<?php echo asset($product->video);?>" type="video/mp4">
+            <source src="<?php echo asset($product->video);?>" type="video/ogg">
+            您的浏览器不支持 video 标签。
+        </video>
+    <?php else:?>
+        <img src="<?php echo asset($product->images);?>" width="400">
+    <?php endif;?>
     </div>
 
     <div class="m-cell">
