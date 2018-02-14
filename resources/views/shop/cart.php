@@ -35,9 +35,9 @@
             <div class="list-mes-item">
                 <div>
                     单价：<span class="list-price"><em>¥</em><?php echo $cart->price?></span>
-                    总价：<span class="list-price">¥<?php echo $cart->price*$cart->mount?></span>
+                    数量：<span><?php echo $cart->mount?></span>
                 </div>
-                <div>数量：<?php echo $cart->mount?></div>
+                <div>总价：¥<?php echo $cart->price*$cart->mount?></div>
             </div>
         </div>
     </a>
