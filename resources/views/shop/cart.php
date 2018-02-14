@@ -24,7 +24,18 @@
   </header>
 
   <div class="g-view">
-  
+  <div class="m-grids-3">
+  <?php foreach($carts as $cart):?>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><img src="<?php echo asset($cart->path)?>" ></div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><span><?php echo $cart->name?></span></div>
+    </a>
+    <a href="#" class="grids-item">
+        <div class="grids-txt"><span><?php echo $cart->mount?></span></div>
+    </a>
+<?php endforeach;?> 
   </div>
 
   <footer class="m-tabbar tabbar-fixed">

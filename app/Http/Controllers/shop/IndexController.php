@@ -9,6 +9,7 @@ use App\Product;
 use App\Picture;
 use App\Contact;
 use App\Cart;
+use Illuminate\Support\Facades\DB;
 
 class IndexController extends Controller
 {
@@ -80,10 +81,16 @@ class IndexController extends Controller
     }
 
     public function cart(){
+      $user_id=session('user_id');
       $data=array();
       $contacts = Contact::select('name','address','content','mobile')->first();
       $data['contacts']=$contacts;
-      
+      $carts = DB::table('carts')
+              ->leftJoin('product','carts.product_id','=','product.id')
+              ->where('uid',$user_id)
+              ->where('mount','>',0)
+              ->get();
+      $data['carts']=$carts;
       return view('shop/cart',$data);
     }
 
