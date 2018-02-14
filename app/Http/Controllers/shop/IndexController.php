@@ -90,5 +90,20 @@ class IndexController extends Controller
     public function add_cart(Request $request){
       $user_id=session('user_id');
       $product_id=$request->product_id;
+      $cart = new Cart;
+      $where=[
+        ['uid'=>$user_id],
+        ['product_id'=>$product_id]
+      ];
+      $mycart=$cart->where($where)->first();
+      if($mycart){
+        $cart->where($where)->increment('mount',1);
+      }else{
+        $cart->uid=$user_id;
+        $cart->product_id=$product_id;
+        $cart->mount=1;
+        $cart->save();
+      }
+      echo json_encode(array('code'=>0,'msg'=>'添加成功','data'=>$mycart));exit;
     }
 }
