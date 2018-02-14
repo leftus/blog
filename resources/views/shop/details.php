@@ -18,7 +18,7 @@
   <header class="m-navbar navbar-fixed">
       <a href="#" class="navbar-item"><i class="back-ico"></i></a>
       <div class="navbar-center"><span class="navbar-title"><?php echo $product->name;?></span></div>
-      <a href="#" class="navbar-item">
+      <a href="javascript:add_cart(<?php echo $product->id;?>)" class="navbar-item">
           <i class="icon-shopcart-outline"></i>
       </a>
   </header>
@@ -87,6 +87,19 @@
 <script src="<?php echo asset("js/app.js");?>"></script>
 <!-- 引入YDUI脚本 -->
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
+<script>
+function add_cart(product_id){
+    $.ajax({
+        url:"",
+        type:"post",
+        data:{product_id:product_id},
+        dataType:"json",
+        success:function(data){
+            
+        }
+    })
 
+}
+</script>
 </body>
 </html>

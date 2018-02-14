@@ -86,4 +86,9 @@ class IndexController extends Controller
       
       return view('shop/cart',$data);
     }
+
+    public function add_cart(Request $request){
+      $user_id=session('user_id');
+      $product_id=$request->product_id;
+    }
 }
