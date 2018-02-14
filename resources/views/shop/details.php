@@ -90,12 +90,12 @@
 <script>
 function add_cart(product_id){
     $.ajax({
-        url:"",
+        url:"/add_cart",
         type:"post",
         data:{product_id:product_id},
         dataType:"json",
         success:function(data){
-            
+
         }
     })
 
