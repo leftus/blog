@@ -89,13 +89,19 @@
 <script src="<?php echo asset("ydui-0.1.3/build/js/ydui.js");?>"></script>
 <script>
 function add_cart(product_id){
+
     $.ajax({
         url:"/add_cart",
         type:"post",
         data:{product_id:product_id,_token:"<?php echo csrf_token(); ?>"},
         dataType:"json",
         success:function(data){
-
+            if(data.code==0){
+                !function (win, $) {
+                    var dialog = win.YDUI.dialog;
+                    dialog.toast(data.msg, 'none', 1000);
+                }
+            }
         }
     })
 
