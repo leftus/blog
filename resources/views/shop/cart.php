@@ -24,18 +24,25 @@
   </header>
 
   <div class="g-view">
-  <div class="m-grids-3">
+  <article class="m-list list-theme4">
   <?php foreach($carts as $cart):?>
-    <div  class="grids-item">
-        <img src="<?php echo asset($cart->images)?>" >
-    </div>
-    <div  class="grids-item">
-        <span><?php echo $cart->name?></span>
-    </div>
-    <div  class="grids-item">
-        <span><?php echo $cart->mount?></span>
-    </div>
-<?php endforeach;?> 
+    <a href="#" class="list-item">
+        <div class="list-img">
+            <img src="<?php echo asset($cart->images)?>">
+        </div>
+        <div class="list-mes">
+            <h3 class="list-title"><?php echo $cart->name?></h3>
+            <div class="list-mes-item">
+                <div>
+                    <span class="list-price"><em>¥</em><?php echo $cart->price?></span>
+                    <span class="list-del-price">¥<?php echo $cart->price*$cart->mount?></span>
+                </div>
+                <div><?php echo $cart->mount?></div>
+            </div>
+        </div>
+    </a>
+    <?php endforeach;?> 
+    </article>
   </div>
 
   <footer class="m-tabbar tabbar-fixed">
