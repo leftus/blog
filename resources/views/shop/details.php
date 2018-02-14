@@ -92,7 +92,7 @@ function add_cart(product_id){
     $.ajax({
         url:"/add_cart",
         type:"post",
-        data:{product_id:product_id,csrf-token:"<?php echo csrf_token(); ?>"},
+        data:{product_id:product_id,_token:"<?php echo csrf_token(); ?>"},
         dataType:"json",
         success:function(data){
 
