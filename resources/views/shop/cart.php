@@ -26,15 +26,15 @@
   <div class="g-view">
   <div class="m-grids-3">
   <?php foreach($carts as $cart):?>
-    <a href="#" class="grids-item">
-        <div class="grids-txt"><img src="<?php echo asset($cart->images)?>" ></div>
-    </a>
-    <a href="#" class="grids-item">
-        <div class="grids-txt"><span><?php echo $cart->name?></span></div>
-    </a>
-    <a href="#" class="grids-item">
-        <div class="grids-txt"><span><?php echo $cart->mount?></span></div>
-    </a>
+    <div  class="grids-item">
+        <img src="<?php echo asset($cart->images)?>" >
+    </div>
+    <div  class="grids-item">
+        <span><?php echo $cart->name?></span>
+    </div>
+    <div  class="grids-item">
+        <span><?php echo $cart->mount?></span>
+    </div>
 <?php endforeach;?> 
   </div>
 
