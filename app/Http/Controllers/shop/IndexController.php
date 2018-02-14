@@ -86,7 +86,7 @@ class IndexController extends Controller
       $contacts = Contact::select('name','address','content','mobile')->first();
       $data['contacts']=$contacts;
       $carts = DB::table('carts')
-              ->leftJoin('product','carts.product_id','=','product.id')
+              ->leftJoin('products','carts.product_id','=','products.id')
               ->where('uid',$user_id)
               ->where('mount','>',0)
               ->get();
